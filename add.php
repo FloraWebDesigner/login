@@ -24,31 +24,33 @@
 <div class="row">
 <?php
    require('resuables/connect.php'); 
-  $query = 'SELECT * FROM schools';
-  // Execute the query
-  $schools = mysqli_query($connect, $query);
-  // If there is no result, display an error message
-  // echo '<pre>' . print_r($schools) . '</pre>';
-  foreach($schools as $school){
-    echo '<div class="card col-md-4 mb-2">
-    <div class="card-body">
-      <h5 class="card-title">' . $school['School Name'] . '</h5>
-      <p class="card-text">' . $school['School Level'] . '</p>
-      <span class="badge bg-secondary">' . $school['Phone'] .'</span><br><br>
-      <a href="mailto:' . $school['Email'] . '" class="btn btn-primary">' . $school['Email'] . '</a>
-    </div>
-  </div>';
-
-
-  }
+   ?>
+   </div>
+   <div class="row">
+    <div class="col-md-5">
+    <form action="includes/addSchool.php" method="post">
+  <div class="mb-3">
+    <label for="schoolName" class="form-label">School Name</label>
+    <input type="text" class="form-control" id="schoolName" name="schoolName">
+    
+</div>
+<div class="mb-3">
+    <label for="schoolType" class="form-label">School Type</label>
+    <input type="text" class="form-control" id="schoolType" name="schoolType">
+</div>
+<div class="mb-3">
+    <label for="email" class="form-label">Email</label>
+    <input type="text" class="form-control" id="email" name="email">
+</div>
+<div class="mb-3">
+    <label for="phone" class="form-label">Phone</label>
+    <input type="text" class="form-control" id="phone" name="phone">
+</div>
   
- 
-    ?>
+  <button type="submit" class="btn btn-primary" name="addSchool">Submit</button>
+</form>
+
+
+
 </div>
 </div>
-
-</body>
-</html>
-
-
-
