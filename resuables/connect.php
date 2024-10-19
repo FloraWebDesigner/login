@@ -1,5 +1,3 @@
-<!--save connection in here
---> 
 <?php
 $connect=mysqli_connect(
     'localhost',
@@ -7,7 +5,7 @@ $connect=mysqli_connect(
       'root',
       'php_school'
     );
-    // to see if able to connect
+    // to see if able to connect  save connection in here
     if (!$connect) 
   {
     echo 'Connection Failed: ' . mysqli_connect_errno();

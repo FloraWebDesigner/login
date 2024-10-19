@@ -1,7 +1,9 @@
 <?php
 // check form posted or not; if get - $_GET
-// 'addSchool' is button name
-if(isset($_POST['addSchool'])){
+// 'updateSchool' is button name
+if(isset($_POST['updateSchool'])){
+$schoolID=$_POST['id'];
+    // new values
 // form name attribute
 $schoolName=$_POST['schoolName'];
 //echo $schoolName;
@@ -15,18 +17,28 @@ require('../resuables/connect.php');
 // VALUES ('$schoolName', '$schoolType', '$phone','$email' )";
 
 // update on Oct-16
-$query = "INSERT INTO schools (`School Name`, `School Type`, `Phone`,`Email`) VALUES (
-'" . mysqli_real_escape_string($connect, $schoolName) . "',
-'" . mysqli_real_escape_string($connect, $schoolType) . "',
-'" . mysqli_real_escape_string($connect, $phone) . "',
-'" . mysqli_real_escape_string($connect, $email) . "',
-)";
+// $query = "UPDATE schools (`School Name`, `School Type`, `Phone`,`Email`) VALUES (
+// '" . mysqli_real_escape_string($connect, $schoolName) . "',
+// '" . mysqli_real_escape_string($connect, $schoolType) . "',
+// '" . mysqli_real_escape_string($connect, $phone) . "',
+// '" . mysqli_real_escape_string($connect, $email) . "',
+// )";
+
+
+// $schoolNameSanitized = mysqli_real_escape_string($connect, $schoolName)
+
+$query = "UPDATE `schools` SET 
+`School Name`= '" . mysqli_real_escape_string($connect, $schoolName) . "',
+`School Type`= '" . mysqli_real_escape_string($connect, $schoolType) . "',
+`Phone`= '" . mysqli_real_escape_string($connect, $phone) . "',
+`Email`= '" . mysqli_real_escape_string($connect, $email) . "' WHERE `id` = '$schoolID'";
+
 // $schoolName = mysqli_real_escape_string($connect, $schoolName)
 
 // mysqli_query($connect, $query) => pass 'add school' function
 $school=mysqli_query($connect, $query);
 
-echo "inserted successfully";
+echo "updated successfully";
 
 // redirect to other page
 if($school){
