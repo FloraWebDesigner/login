@@ -1,3 +1,9 @@
+<?php
+include('includes/function.php');
+secure();
+?>
+
+
 <!doctype html>
 <html lang="en">
   <head>
@@ -37,12 +43,9 @@
       <span class="badge bg-secondary">' . $school['Phone'] .'</span><br><br>
       <a href="mailto:' . $school['Email'] . '" class="btn btn-primary">' . $school['Email'] . '</a></span>
     </div>
-
-
   <div class="card-footer">
     <div class="row">
       <div class="col">
-
       <form method="GET" action="updateSchool.php">
         <input type="hidden" name="id" value="' . $school['id'] . '">
         <button class="btn btn-sm btn-primary">Update</button>
@@ -53,6 +56,7 @@
       <form method="GET" action="includes/deleteSchool.php">
       <input type="hidden" name="school_id" value="' . $school['id'] . '">
         <button class="btn btn-sm btn-danger" name="deleteSchool">Delete</button>
+        </form>
       </div>
     </div>
   </div>
@@ -60,8 +64,6 @@
 </div>';
 
   }
-  
- 
     ?>
 </div>
 </div>

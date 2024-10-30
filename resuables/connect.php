@@ -1,9 +1,9 @@
 <?php
 $connect=mysqli_connect(
     'localhost',
-      'root',
-      'root',
-      'php_school'
+    'root',
+    'root',
+    'php_school'
     );
     // to see if able to connect  save connection in here
     if (!$connect) 

@@ -1,4 +1,8 @@
 <?php
+
+include('function.php');
+secure();
+
 // check form posted or not; if get - $_GET
 // 'addSchool' is button name
 if(isset($_POST['addSchool'])){

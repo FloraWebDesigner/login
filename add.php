@@ -1,3 +1,8 @@
+<?php
+include('includes/function.php');
+secure();
+?>
+
 <!doctype html>
 <html lang="en">
   <head>

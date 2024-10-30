@@ -1,4 +1,5 @@
 <?php
+  include('function.php');
 // check form posted or not; if get - $_GET
 // 'updateSchool' is button name
 if(isset($_POST['updateSchool'])){
@@ -43,9 +44,13 @@ echo "updated successfully";
 // redirect to other page
 if($school){
     header("Location: ../index.php");  
+    set_message('School was successfully updated', 'success');
+    header("Location: ../index.php");
 }
 else{
     echo "There was an error adding the school: " . mysqli_error($connect);
 }
+
+
 
 }

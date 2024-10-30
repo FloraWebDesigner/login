@@ -11,6 +11,8 @@
         </li>
         <li class="nav-item">
           <a class="nav-link" href="add.php">Add School</a>
+      <li class="nav-item">
+          <a class="nav-link" href="logout.php">Logout</a>
       </ul>
     </div>
   </div>
